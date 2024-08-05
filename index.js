@@ -2,7 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import chatSessionRouter from "./routes/chatSession.js";
 import documentRouter from "./routes/documents.js";
-
+import cookieParser from "cookie-parser";
 // Connect to database
 await mongoose.connect(process.env.MONGO_URL);
 
@@ -11,6 +11,7 @@ const app = express();
 
 //use middleware
 app.use(express.json());
+app.use(cookieParser()); // For parsing cookies
 
 
 
