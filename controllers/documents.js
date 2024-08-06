@@ -30,7 +30,7 @@ export const postDocument = async (req, res) => {
   
       // Extract document details from the request body
       const { filename } = req.body;
-    const filePath = req.file ? req.file.path : undefined;
+    const filePath = req.file ? req.file.filename : undefined;
     
 
       // Log for debugging
@@ -54,7 +54,9 @@ export const postDocument = async (req, res) => {
       const savedDocument = await newDocument.save();
   
       // Optionally, update the chat session to include the new document
-      chatSession.documents.push(savedDocument._id);
+      
+      chatSession.documentsId=savedDocument._id
+      
       await chatSession.save();
   
       // Respond with the saved document
