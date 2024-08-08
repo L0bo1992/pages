@@ -16,7 +16,7 @@ await mongoose.connect(process.env.MONGO_URL);
 const app = express();
 expressOasGenerator.handleResponses(app, {
     alwaysServeDocs: true,
-    tags: ['users', 'articles'],
+    tags: ['chat-sessions', 'documents'],
     mongooseModels: mongoose.modelNames(),
 });
 
