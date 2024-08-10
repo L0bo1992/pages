@@ -21,7 +21,11 @@ expressOasGenerator.handleResponses(app, {
 });
 
 // Use middlewares
-app.use(cors());
+//app.use(cors());
+app.use(cors(
+    {origin:'https://pages-client.netlify.app' }
+));
+
 
 app.use(express.json());
 app.use(cookieParser()); // For parsing cookies
