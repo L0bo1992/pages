@@ -21,10 +21,7 @@ expressOasGenerator.handleResponses(app, {
 });
 
 // Use middlewares
-app.use(cors({
-    credentials: true,
-    origin: process.env.ALLOWED_DOMAINS?.split(',') || []
-}));
+app.use(cors());
 
 app.use(express.json());
 app.use(cookieParser()); // For parsing cookies
