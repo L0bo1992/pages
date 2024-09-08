@@ -23,7 +23,7 @@ expressOasGenerator.handleResponses(app, {
 // Use middlewares
 //app.use(cors());
 app.use(cors(
-    {origin:'https://pages-client.netlify.app' }
+    {origin:'https://chapchap-client.netlify.app' }
 ));
 
 
